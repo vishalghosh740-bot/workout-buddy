@@ -1,0 +1,21 @@
+:root { --primary: #1aac83; --error: #e7195a; --bg: #f1f1f1; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); font-family: "Poppins", sans-serif; color: #333; }
+header { background: #fff; }
+header h1 { max-width: 1400px; margin: 0 auto; padding: 24px 20px; font-size: 1.2rem; border-left: 4px solid #333; }
+.pages { max-width: 1400px; margin: 0 auto; padding: 20px; display: grid; grid-template-columns: 3fr 1fr; gap: 100px; }
+.workout-details { background: #fff; border-radius: 4px; margin: 20px auto; padding: 20px; position: relative; box-shadow: 2px 2px 5px rgba(0,0,0,.05); }
+.workout-details h4 { margin-bottom: 10px; font-size: 1.1em; color: var(--primary); }
+.workout-details p { margin: 0; font-size: .9em; color: #555; }
+.workout-details .time { font-size: .75em; margin-top: 4px; }
+.workout-details .delete { position: absolute; top: 20px; right: 20px; cursor: pointer; background: #f1f1f1; padding: 6px 8px; border-radius: 50%; border: 0; }
+form.create { display: flex; flex-direction: column; }
+form.create label, form.create input { display: block; }
+form.create input { padding: 10px; margin: 10px 0 20px; width: 100%; border: 1px solid #ddd; border-radius: 4px; }
+form.create button { background: var(--primary); border: 0; color: #fff; padding: 10px; border-radius: 4px; cursor: pointer; font-family: inherit; }
+.error { padding: 10px; background: #ffefef; border: 1px solid var(--error); color: var(--error); border-radius: 4px; margin: 20px 0; }
+input.invalid { border: 1px solid var(--error) !important; }
+@media (max-width: 800px) {
+  .pages { grid-template-columns: 1fr; gap: 20px; }
+  form.create { order: -1; }
+}
