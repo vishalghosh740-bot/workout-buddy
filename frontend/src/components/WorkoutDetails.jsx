@@ -1,6 +1,6 @@
 import { formatDistanceToNow } from 'date-fns';
 import { useWorkoutsContext } from '../context/WorkoutContext.jsx';
-import { API } from './api.js';
+import { API } from '../api.js';
 
 export default function WorkoutDetails({ workout }) {
   const { dispatch } = useWorkoutsContext();
