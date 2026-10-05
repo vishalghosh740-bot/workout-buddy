@@ -1,11 +1,12 @@
 import { formatDistanceToNow } from 'date-fns';
 import { useWorkoutsContext } from '../context/WorkoutContext.jsx';
+import { API } from '../api.js';
 
 export default function WorkoutDetails({ workout }) {
   const { dispatch } = useWorkoutsContext();
 
   const handleDelete = async () => {
-    const res = await fetch('/api/workouts/' + workout._id, { method: 'DELETE' });
+    const res = await fetch(`${API}/api/workouts/` + workout._id, { method: 'DELETE' });
     const json = await res.json();
     if (res.ok) dispatch({ type: 'DELETE_WORKOUT', payload: json });
   };
@@ -19,4 +20,4 @@ export default function WorkoutDetails({ workout }) {
       <button className="delete" onClick={handleDelete} aria-label="Delete workout" title="Delete">🗑️</button>
     </div>
   );
-}
+} 

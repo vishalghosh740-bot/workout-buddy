@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useWorkoutsContext } from './context/WorkoutContext.jsx';
 import WorkoutDetails from './components/WorkoutDetails.jsx';
 import WorkoutForm from './components/WorkoutForm.jsx';
+import { API } from '../api.js'; 
 
 export default function App() {
   const { workouts, dispatch } = useWorkoutsContext();
@@ -10,7 +11,7 @@ export default function App() {
   useEffect(() => {
     const fetchWorkouts = async () => {
       try {
-        const res = await fetch('/api/workouts');
+        const res = await fetch(`${API}/api/workouts`);
         const json = await res.json();
         if (!res.ok) throw new Error(json.error || 'Failed to load workouts');
         dispatch({ type: 'SET_WORKOUTS', payload: json });

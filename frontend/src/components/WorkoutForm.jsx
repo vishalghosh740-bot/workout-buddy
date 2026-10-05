@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useWorkoutsContext } from '../context/WorkoutContext.jsx';
+import { API } from '../api.js';
 
 export default function WorkoutForm() {
   const { dispatch } = useWorkoutsContext();
@@ -12,7 +13,7 @@ export default function WorkoutForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/workouts', {
+      const res = await fetch(`${API}/api/workouts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, load, reps }),
@@ -51,4 +52,4 @@ export default function WorkoutForm() {
       {error && <div className="error">{error}</div>}
     </form>
   );
-}
+} 
