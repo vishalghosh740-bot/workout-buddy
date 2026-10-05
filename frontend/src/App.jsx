@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useWorkoutsContext } from './context/WorkoutContext.jsx';
 import WorkoutDetails from './components/WorkoutDetails.jsx';
 import WorkoutForm from './components/WorkoutForm.jsx';
-import { API } from '../api.js'; 
+import { API } from './api.js'; 
 
 export default function App() {
   const { workouts, dispatch } = useWorkoutsContext();
